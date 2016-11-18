@@ -1,0 +1,1 @@
+export { CustomModule } from './src/app/custom.module';
