@@ -4,7 +4,7 @@ import {rootRouterConfig} from "./custom.routes";
 import {CustomComponent} from "./custom.component";
 import {GithubService} from "./github/shared/github.service";
 import {FormsModule} from "@angular/forms";
-import {BrowserModule} from "@angular/platform-browser";
+import {CommonModule} from "@angular/common";
 import {HttpModule} from "@angular/http";
 import {AboutComponent} from './about/about.component';
 import {HomeComponent} from './home/home.component';
@@ -15,9 +15,9 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [CustomComponent, AboutComponent, RepoBrowserComponent, RepoListComponent, RepoDetailComponent, HomeComponent],
-  imports     : [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],
+  imports     : [CommonModule, FormsModule, HttpModule, RouterModule.forChild(rootRouterConfig)],
   providers   : [GithubService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
-  exports: [CustomComponent]
+  exports: [CustomComponent, RouterModule]
 })
 export class CustomModule {
 
