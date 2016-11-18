@@ -7,7 +7,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {HttpModule} from "@angular/http";
 import {HomeComponent} from './home/home.component';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
-import {CustomModule} from '../../custom-module/custom.module';
+import {CustomModule} from '../custom-module/custom.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
