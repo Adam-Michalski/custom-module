@@ -1,1 +1,1 @@
-export { CustomModule } from './src/app/custom.module';
+export { CustomModule } from './custom-module/custom.module';

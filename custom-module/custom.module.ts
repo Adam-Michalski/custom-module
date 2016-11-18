@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core'
 import {RouterModule} from "@angular/router";
-import {rootRouterConfig} from "./custom.routes";
+import {rootRouterConfig} from "./app.routes";
 import {CustomComponent} from "./custom.component";
 import {GithubService} from "./github/shared/github.service";
 import {FormsModule} from "@angular/forms";
@@ -16,7 +16,8 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 @NgModule({
   declarations: [CustomComponent, AboutComponent, RepoBrowserComponent, RepoListComponent, RepoDetailComponent, HomeComponent],
   imports     : [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],
-  providers   : [GithubService, {provide: LocationStrategy, useClass: HashLocationStrategy}]
+  providers   : [GithubService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  exports: [CustomComponent]
 })
 export class CustomModule {
 
